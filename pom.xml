@@ -48,7 +48,7 @@
 
     <repositories>
         <!-- ProFewGames start -->
-        <!-- UPDATED TO 1.15.2 AND REMOVED 1.9 -->
+        <!-- Updated Repos -->
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
@@ -69,11 +69,11 @@
 
     <dependencies>
         <!-- ProFewGames start -->
-        <!-- UPDATED TO 1.15.2 AND REMOVED 1.9 -->
+        <!-- Added Universal Support -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.15.2-R0.1-SNAPSHOT</version>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <!--        <dependency>-->
