@@ -1,10 +1,10 @@
+main: xyz.ufactions.prodrivebackup.ProDriveBackup
 name: ProDriveBackup
-version: 2.0
-description: Uploads backups to Google Drive
-main: ratismal.drivebackup.DriveBackup
-author: Ratismal, ProFewGames
-api-version: 1.15
+version: 3.0
+author: ProFewGames
+description: Allows you to backup to your server to ProDrive
+website: https://prodrive.green-bull.in/
 commands:
-  driveBackup:
-    description: See all DriveBackup commands
-    usage: /drivebackup
+  prodrivebackup:
+    description: Administration backup command
+    aliases: [drivebackup, pdb, backup]

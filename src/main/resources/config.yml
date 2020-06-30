@@ -1,91 +1,25 @@
-#######################################
-#
-#DriveBackup - by Ratismal, ProFewGames
-#
-#######################################
+###########################################################################################
+#                                                                                         #
+#                             ProDriveBackup                                              #
+#                                   By: ProFewGames                                       #
+#                                                                                         #
+###########################################################################################
 
-# Should the plugin look for updates?
-update-check: true # Switching this value will do nothing
+# Backup.directory - This value indicates where the backups will be stored after a new one is created.
+# Backup.interval - This is the time in ticks that the plugin will automatically create backups, Set as -1 to disable
+backup:
+  directory: backup
+  interval: 1728000 # 1 Day
 
-# Should metrics be enabled
-metrics: true # Switching this value will do nothing
+# When a new backup is created it will be labeled with this. For more DateFormat information
+# Visit https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+date-format: d-M-yyyy--HH-mm
 
-# How often to do backups (in minutes). Set to -1 to disable automatic backups.
-delay: 60
-# How many backups to keep before deleting the oldest one. Set to -1 to disable automatic deletes.
-keep-count: 20
+# Will the plugin be talkative? Will it send messages whenever something happens.
+verbose: true
 
-# Expandable list of things to back up.
-backup-list:
-# The backup list is comprised of three things:
-#   - folder names
-#   - file name formats
-#   - whether this plugin should create the backup
-# The file name format is what the backup's naming scheme is
-# For more information about timedate formatting, see
-#   http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html
-# To verify they are being formatted correctly, do /drivebackup list
-# Correct formatting is important, as this is how the plugin knows
-#   which backup is the most recent!
-#
-# For example, if you wanted to back up crash reports, you would do:
-#  crash-reports:
-#    format: "'crash-'yyyy-MM-dd_HH.mm.ss'-server.zip'"
-#    create: true
-# The 'crash-reports:' part refers to the folder, and the "'crash-'yyyy-MM-dd_HH.mm.ss'-server.txt'" refers to
-#   what format the file name is. Since create is set to true, the plugin will take the crash-reports folder,
-#   zip it into a file according to the format, and upload it.
-# You can also use the blacklist key to not include specified files
-#    blacklist:
-#    - "dontbackup"
-#    - "thesefolders"
-#    - "orthisfile.txt"
-  world:
-    format: "'Backup-world-'yyyy-M-d--HH-mm'.zip'"
-    create: true
-  plugins:
-    format: "'Backup-plugins-'yyyy-M-d--HH-mm'.zip'"
-    create: true
-
-# Where the backups are stored locally
-dir: "backups"
-
-# Folder in to save backups on remote server
-destination: "backups"
-
-# Option to keep local backup directory clean after remote upload
-keep-local-backup-after-upload: true
-
-# Google Drive configs
-googledrive:
-  enabled: true
-onedrive:
-  enabled: false
-ftp:
-  enabled: false
-  # Server to connect to
-  hostname: ftp.example.com
-  # Port to connect to
-  port: 21
-  # Set to true to use FTPS instead of FTP
-  FTPS: false
-  # Username
-  username: user
-  # Password
-  password: Password1
-  # The directory to work in (leave blank for default)
-  working-dir:
-
-# Messages
-messages:
-  no-perm: "You don't have permission to do this!"
-  # What to say to all players when backup starts
-  backup-start: "Creating backups, server may lag for a little while..."
-  # What to say to all players when backup is complete
-  backup-complete: "Backup complete."
-  # What to say to all players when backup is complete and there is another scheduled backup. This message is sent along with "backup-complete".
-  #    %TIME is the amount of time until the next backup, in minutes
-  next-backup: "The next backup is in %TIME minutes"
-
-# If set to true, most stacktraces will be suppressed
-suppress-errors: false
+# Connection Settings
+upload:
+  host: https://webdav.com/upload
+  username: WebDavUser
+  password: walrus
